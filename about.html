@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <h1>About Me</h1>
+</section>
+
+<section class="about-content">
+  <p class="hero-bio">{{ profile.bio }}</p>
+
+  <h3>Skills</h3>
+  <div class="skill-tags">
+    {% for skill in profile.skills %}
+      <span class="tag">{{ skill }}</span>
+    {% endfor %}
+  </div>
+
+  <div class="social-links">
+    <a href="{{ profile.github }}" target="_blank">GitHub</a>
+    <a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a>
+    <a href="{{ profile.resume_url }}" target="_blank">Resume</a>
+  </div>
+</section>
+{% endblock %}
